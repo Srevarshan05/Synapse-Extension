@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Synapse: Local Context Memory Protocol",
+  "version": "0.1.0",
+  "description": "Zero-trust edge memory layer for synchronizing context across ChatGPT, Claude, and Gemini locally.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "offscreen",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Synapse Vault"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://chat.deepseek.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "offscreen.html",
+        "offscreen.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

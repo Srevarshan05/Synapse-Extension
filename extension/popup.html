@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root {
+      --bg: #06060c;
+      --card: #0d0f1e;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #8b5cf6;
+      --accent-glow: rgba(139, 92, 246, 0.2);
+    }
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 12px;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(135deg, #fff 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      color: #34d399;
+      font-weight: 600;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #34d399;
+    }
+    .search-container {
+      margin-bottom: 12px;
+    }
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: #fff;
+      font-size: 12px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 6px var(--accent-glow);
+    }
+    .capsules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .capsule-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .capsule-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .capsule-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .footer {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 9px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent);"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+      SYNAPSE EDGE VAULT
+    </h1>
+    <div class="status">
+      <div class="status-dot"></div>
+      LOCAL ACTIVE
+    </div>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search saved context modules..." />
+  </div>
+
+  <div class="capsules-list" id="list-container">
+    <div style="font-size: 11px; text-align: center; color: var(--text-muted); padding: 24px 0;">
+      Loading local index...
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>E2EE Zero-Trust Wallet</span>
+    <a href="http://localhost:5173" target="_blank">Open Dashboard</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
