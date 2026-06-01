@@ -94,25 +94,51 @@ Chrome Extension (MV3)
 
 ---
 
+## Getting Started
+
+Follow these clean, easy-to-read instructions to install the Chrome extension and launch the secure desktop companion app.
+
+### 🔌 1. How to Load the Extension in Chrome
+
+To install the extension locally in developer mode:
+1. Open Google Chrome and navigate to: **`chrome://extensions/`**
+2. In the top-right corner, toggle the **Developer mode** switch **ON**.
+3. In the top-left corner, click the **Load unpacked** button.
+4. Select the **`extension`** directory (or the extracted **`Synapse-v5`** directory) from this project folder.
+5. The extension will install immediately, showing the Synapse logo in your Chrome toolbar!
+
+---
+
+### 🖥️ 2. How to Start the Local Desktop Companion
+
+The Synapse desktop application runs locally on your PC, hosting the secure Axum HTTP loopback API and indexing your synapses in a local SQLite database:
+
+1. **Install Prerequisites**: Ensure you have [Node.js](https://nodejs.org/) (v18+) and [Rust/Cargo](https://www.rust-lang.org/) installed on your machine.
+2. **Install Project Dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Build the Application Assets**:
+   ```bash
+   npm run build
+   ```
+4. **Launch the Desktop Application**:
+   ```bash
+   npm run tauri dev
+   ```
+   This compiles and launches the multi-threaded Tauri desktop dashboard window and sets up your secure local storage vault!
+
+---
+
 ## Development
 
 ### Prerequisites
 - Node.js 18+
 - npm 9+
 - Google Chrome 115+
+- Rust & Cargo (for Tauri backend)
 
-### Setup
-```bash
-git clone <repo>
-cd Synapse-Extension
-npm install
-npm run build
-```
-
-### Load in Chrome
-See [INSTALL.md](./INSTALL.md) for step-by-step instructions.
-
-### Build commands
+### Build Commands
 ```bash
 npm run build:content    # Build content.bundle.js
 npm run build:dashboard  # Build React dashboard
