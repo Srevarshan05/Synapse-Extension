@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-05-29T16:40:14.531Z",
+  "version": "3.0.0",
+  "chatgpt": {
+    "expectedMessages": 4,
+    "capturedMessages": 4,
+    "expectedImages": 2,
+    "capturedImages": 2,
+    "expectedCodeBlocks": 1,
+    "capturedCodeBlocks": 1,
+    "expectedTables": 1,
+    "capturedTables": 1,
+    "expectedAttachments": 0,
+    "capturedAttachments": 0,
+    "duplicates": 0,
+    "missing": 0,
+    "status": "PASSED"
+  },
+  "claude": {
+    "expectedMessages": 4,
+    "capturedMessages": 4,
+    "expectedCodeBlocks": 0,
+    "capturedCodeBlocks": 0,
+    "expectedArtifacts": 2,
+    "capturedArtifacts": 2,
+    "hasReactArtifact": true,
+    "hasHtmlArtifact": true,
+    "duplicates": 0,
+    "missing": 0,
+    "status": "PASSED"
+  },
+  "gemini": {
+    "expectedMessages": 4,
+    "capturedMessages": 4,
+    "expectedImages": 1,
+    "capturedImages": 1,
+    "expectedCitations": 3,
+    "capturedCitations": 3,
+    "shadowDOMCaptured": true,
+    "duplicates": 0,
+    "missing": 0,
+    "status": "PASSED"
+  }
+}
